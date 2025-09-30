@@ -18,26 +18,31 @@
 	box-sizing: border-box;
 }
 
+/* Improved heading shadow that scales with font size */
+.heading-shadow {
+	position: relative;
+	font-weight: 900;
+	text-shadow: clamp(4px, 0.5vw, 8px) clamp(4px, 0.5vw, 8px) 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved hollow text effect */
 .hollow-text {
-	position: relative; /* Required for positioning the pseudo-element */
-	font-weight: 700;
-	/* This styles the main, visible text */
-	-webkit-text-stroke: 3px white;
+	position: relative;
+	font-weight: 900;
+	-webkit-text-stroke: clamp(2px, 0.2vw, 3px) white;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
+	paint-order: stroke fill;
 }
 
 .hollow-text::before {
-	content: attr(data-text); /* Duplicates the text from the data-text attribute */
+	content: attr(data-text);
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1; /* Places the shadow behind the main text */
-
-	/* This styles the shadow element */
-	-webkit-text-stroke: 3px rgba(0, 0, 0, 0.2);
+	z-index: -1;
+	-webkit-text-stroke: clamp(2px, 0.2vw, 3px) rgba(0, 0, 0, 0.2);
 	-webkit-text-fill-color: transparent;
-
-	/* This creates the offset */
-	transform: translate(8px, 8px);
+	transform: translate(clamp(4px, 0.5vw, 8px), clamp(4px, 0.5vw, 8px));
+	paint-order: stroke fill;
 }
