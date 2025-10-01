@@ -22,14 +22,14 @@
 .heading-shadow {
 	position: relative;
 	font-weight: 900;
-	text-shadow: clamp(4px, 0.5vw, 8px) clamp(4px, 0.5vw, 8px) 0px rgba(0, 0, 0, 0.2);
+	text-shadow: 0.09em 0.09em 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Improved hollow text effect */
 .hollow-text {
 	position: relative;
 	font-weight: 900;
-	-webkit-text-stroke: clamp(2px, 0.2vw, 3px) white;
+	-webkit-text-stroke: 0.03em white;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
 	paint-order: stroke fill;
@@ -41,8 +41,29 @@
 	top: 0;
 	left: 0;
 	z-index: -1;
-	-webkit-text-stroke: clamp(2px, 0.2vw, 3px) rgba(0, 0, 0, 0.2);
+	-webkit-text-stroke: 0.03em rgba(0, 0, 0, 0.2);
 	-webkit-text-fill-color: transparent;
-	transform: translate(clamp(4px, 0.5vw, 8px), clamp(4px, 0.5vw, 8px));
+	transform: translate(0.09em, 0.09em);
 	paint-order: stroke fill;
+}
+
+/* Fade-in animations for headings */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+	animation: fadeIn 0.8s ease-out 0.2s forwards;
+	opacity: 0;
 }
