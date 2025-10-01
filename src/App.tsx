@@ -10,11 +10,24 @@ function App() {
 	const [imagesLoaded, setImagesLoaded] = useState(false);
 
 	useEffect(() => {
-		// Trigger animations after component mounts
-		const timer = setTimeout(() => {
-			setImagesLoaded(true);
-		}, 100);
-		return () => clearTimeout(timer);
+		// Preload images before triggering animations
+		const imagesToLoad = [image1, image2, image3];
+		let loadedCount = 0;
+
+		const checkAllLoaded = () => {
+			loadedCount++;
+			if (loadedCount === imagesToLoad.length) {
+				// Small delay after images load for smooth appearance
+				setTimeout(() => setImagesLoaded(true), 150);
+			}
+		};
+
+		imagesToLoad.forEach((src) => {
+			const img = new Image();
+			img.onload = checkAllLoaded;
+			img.onerror = checkAllLoaded; // Still trigger even if image fails
+			img.src = src;
+		});
 	}, []);
 
 	useEffect(() => {

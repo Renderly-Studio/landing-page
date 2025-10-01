@@ -10,6 +10,11 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Smooth scrolling for the entire page */
+html {
+	scroll-behavior: smooth;
+}
+
 .debug {
 	border: 2px solid red;
 }
