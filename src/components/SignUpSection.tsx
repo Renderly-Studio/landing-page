@@ -38,14 +38,19 @@ const SignUpSection: React.FC = () => {
 		<div className="w-full bg-white text-black py-16 md:py-24 px-6 md:px-12">
 			<div className="max-w-4xl mx-auto text-center">
 				{/* Heading */}
-				<h2 className="text-4xl md:text-5xl lg:text-6xl font-black italic mb-4">Be a model anytime!</h2>
+				<h2 className="text-4xl md:text-5xl lg:text-6xl font-black  mb-4">Be a model anytime!</h2>
 
-				{/* Description */}
-				<p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-					Get notified when Renderly Studio launches. Be among the first to transform your creative vision into stunning
-					AI-generated content.
+				{/* Description of the tool */}
+				<p className="text-lg md:text-xl text-gray-800 mb-12 max-w-3xl mx-auto leading-relaxed">
+					Renderly Studio is an AI-powered creative platform that transforms your ideas into stunning visual content.
+					Generate professional-quality portraits, product shots, and artistic renders with just a text prompt. Perfect
+					for creators, marketers, and anyone looking to bring their vision to life instantly.
 				</p>
 
+				{/* Subscription CTA */}
+				<p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+					Get notified when we launch. Be among the first to experience the future of AI-generated content.
+				</p>
 				{/* Email Form */}
 				<form
 					onSubmit={handleSubmit}
