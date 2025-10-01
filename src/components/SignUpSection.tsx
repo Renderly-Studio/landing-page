@@ -43,9 +43,9 @@ const SignUpSection: React.FC = () => {
 
 				{/* Description of the tool */}
 				<p className="text-lg md:text-xl text-gray-800 mb-12 max-w-3xl mx-auto leading-relaxed">
-					Renderly Studio is an AI-powered creative platform that transforms your ideas into stunning visual content.
-					Generate professional-quality portraits, product shots, and artistic renders with just a text prompt. Perfect
-					for creators, marketers, and anyone looking to bring their vision to life instantly.
+					Renderly Studio is your AI-powered creative playground. Generate professional portraits, try on outfits and
+					poses from our curated catalog, and create stunning videos—all without a camera or studio. Perfect for
+					creators, brands, and anyone ready to bring their vision to life instantly.
 				</p>
 
 				{/* Subscription CTA */}

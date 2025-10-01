@@ -63,8 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 			message: "Successfully subscribed!",
 			email: email,
 		});
-	} catch (error) {
-		console.error("Subscription error:", error);
+	} catch {
 		return res.status(500).json({ error: "Internal server error" });
 	}
 }
