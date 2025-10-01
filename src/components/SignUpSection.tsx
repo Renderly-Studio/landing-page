@@ -28,7 +28,8 @@ const SignUpSection: React.FC = () => {
 				setStatus("error");
 				setMessage(data.error || "Something went wrong. Please try again.");
 			}
-		} catch {
+		} catch (error) {
+			console.error("Fetch error:", error);
 			setStatus("error");
 			setMessage("Failed to subscribe. Please try again later.");
 		}
