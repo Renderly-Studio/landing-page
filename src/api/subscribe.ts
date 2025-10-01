@@ -43,7 +43,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		}
 
 		// Insert new subscriber
-		const { data, error } = await supabase
+		const { error } = await supabase
 			.from("subscribers")
 			.insert([
 				{
